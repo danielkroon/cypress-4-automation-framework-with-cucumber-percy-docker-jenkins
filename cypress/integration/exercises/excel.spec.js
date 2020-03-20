@@ -3,13 +3,13 @@ const testData = require('../../fixtures/testData.json')
 describe('Test if Sales and Gross Sales amount from testData.xlsx file have the same amounts', () => {
 	testData.forEach(testDataRow => {
 		const data = {
-			profit: testDataRow.Profit,
 			sales: testDataRow.Sales,
+			grossSales: testDataRow.GrossSales,
 		}
 
-		context(`Generating a test for ${data.profit}`, () => {
+		context(`Generating a test for ${data.sales}`, () => {
 			it('should have the same', () => {
-				expect(`${data.sales}`).to.equal(data.profit)
+				expect(data.grossSales).to.equal(data.sales)
 			})
 		})
 	})

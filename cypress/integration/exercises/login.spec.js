@@ -21,6 +21,7 @@ describe('Working with inputs', () => {
 		cy.get('@password').clear()
 		// Dont use delay in your production framework. This is just for testing purposes only.
 		cy.get('@password').type('Some invalid name', { delay: 50 })
+		cy.get('#credentials')
 	})
 	it('should mark checkbox', () => {
 		cy.get('input[type="checkbox"]').click()
