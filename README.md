@@ -7,3 +7,7 @@ To convert Excel files to JSON: `npm run convertXLStoJSON`
 - File:- `testData/convertXLStoJSON.ts`
 - Input:- `testData/testData.xlsx`
 - Output:- `cypress/fixtures/testData.json`
+
+## Run a test headless
+
+npx cypress run --spec="cypress/integration/exercises/scroll.spec.js"
