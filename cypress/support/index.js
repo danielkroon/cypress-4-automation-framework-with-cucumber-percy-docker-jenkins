@@ -20,4 +20,3 @@ import './commands'
 // require('./commands')
 
 require('cypress-xpath')
-import '@cypress/code-coverage/support'
