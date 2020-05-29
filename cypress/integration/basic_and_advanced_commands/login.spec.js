@@ -13,7 +13,7 @@ describe('Working with inputs', () => {
 	})
 	it('should fill in username', () => {
 		cy.get('#user_login').as('username')
-		cy.get('@username').clear()
+		cy.get('@').clear()
 		cy.get('@username').type('Some invalid name')
 	})
 	it('should fill password', () => {
