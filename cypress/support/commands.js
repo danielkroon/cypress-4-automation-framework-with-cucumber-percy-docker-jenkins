@@ -31,3 +31,19 @@ Cypress.Commands.add('login', (username, password) => {
 	cy.get('#user_password').type(password)
 	cy.contains('Sign in').click()
 })
+
+// TODO best practice but doesn't work yet
+Cypress.Commands.add('noUiLogin', (username, password) => {
+	cy.request({
+		method: 'POST',
+		url: 'http://zero.webappsecurity.com/signin.html',
+		body: {
+			form: {
+				user_login: 'username',
+				user_password: 'password',
+			},
+		},
+	}).then(resp => {
+		window.localStorage.setItem('jwt', resp.body.form.token)
+	})
+})
