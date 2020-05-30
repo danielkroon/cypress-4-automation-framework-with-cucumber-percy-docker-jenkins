@@ -7,7 +7,10 @@
 		"cy:open": "cypress open",
 		"cy:run": "cypress run",
 		"cy:run-dashboard": "cypress run --record --key 40d2123d-5a9e-46f4-9f37-86e262a1932b",
-		"convertXLStoJSON": "ts-node testData/convertXLStoJSON.ts"
+		"cy:update-snapshots": "cypress run --env updateSnapshots=true",
+		"convertXLStoJSON": "ts-node testData/convertXLStoJSON.ts",
+		"cy:run-tests-with-reporter": "cypress run --reporter cypress-image-snapshot/reporter",
+		"cy:run-tests-with-no-failure": "cypress run --env failOnSnapshotDiff=false"
 	},
 	"keywords": [
 		"testing",
@@ -17,6 +20,7 @@
 	"author": "Daniel Kroon",
 	"license": "ISC",
 	"dependencies": {
+		"cypress-image-snapshot": "^3.1.1",
 		"cypress-xpath": "^1.4.0",
 		"prettier": "^1.19.1",
 		"xlsx": "^0.15.6"
