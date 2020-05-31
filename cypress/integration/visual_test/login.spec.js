@@ -23,5 +23,3 @@ describe('Visual Regression - Login Page', () => {
 		cy.matchImageSnapshot()
 	})
 })
-
-// npx cypress run --spec="cypress/integration/visual_test/login.spec.js"
