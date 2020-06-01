@@ -49,6 +49,22 @@ Cypress.Commands.add('setResolution', size => {
 	}
 })
 
+Cypress.Commands.add('isVisible', selector => {
+	cy.get(selector).should('be.visible')
+})
+
+Cypress.Commands.add('isHidden', selector => {
+	cy.get(selector).should('not.exist')
+})
+
+Cypress.Commands.add('setResolution', size => {
+	if (Cypress._.isArray(size)) {
+		cy.viewport(size[0], size[1]) // width and height
+	} else {
+		cy.viewport(size)
+	}
+})
+
 // TODO best practice but doesn't work yet
 Cypress.Commands.add('noUiLogin', (username, password) => {
 	cy.request({
