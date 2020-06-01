@@ -24,4 +24,7 @@ module.exports = (on, config) => {
 	addMatchImageSnapshotPlugin(on, config)
 	on('task', percyHealthCheck)
 	on('file:preprocessor', cucumber())
+	on('task', {
+		failed: require('cypress-failed-log/src/failed'),
+	})
 }
